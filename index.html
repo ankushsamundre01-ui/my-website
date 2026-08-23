@@ -8,30 +8,34 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#151109;
-    --panel:#1E1810;
-    --panel-2:#19140C;
-    --border:#3A2E17;
-    --text:#F3EDE1;
-    --muted:#A99A80;
-    --saffron:#FF9933;
-    --amber:#FFC14D;
-    --red:#D9634F;
+    --bg:#0A0607;
+    --panel:#170D0A;
+    --panel-2:#120A08;
+    --border:#3D2115;
+    --text:#F5EAE0;
+    --muted:#B79684;
+    --nebula:#FF6B35;
+    --amber:#FFB347;
+    --deep:#C1440E;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
-    background:var(--bg);
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(255,107,53,0.16), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(193,68,14,0.14), transparent 60%),
+      var(--bg);
+    background-attachment:fixed;
     color:var(--text);
     font-family:'IBM Plex Sans', sans-serif;
     line-height:1.6;
   }
-  a{color:var(--saffron); text-decoration:none;}
+  a{color:var(--nebula); text-decoration:none;}
   .mono{font-family:'IBM Plex Mono', monospace;}
-  .wrap{max-width:900px; margin:0 auto; padding:0 24px;}
+  .wrap{max-width:900px; margin:0 auto; padding:0 24px; position:relative;}
 
   .topbar{
     position:sticky; top:0; z-index:10;
-    background:rgba(21,17,9,0.92);
+    background:rgba(10,6,7,0.88);
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--border);
   }
@@ -41,33 +45,51 @@
     max-width:900px; margin:0 auto;
   }
   .brand{font-family:'IBM Plex Mono', monospace; font-size:14px; letter-spacing:0.5px; color:var(--text);}
-  .brand span{color:var(--saffron);}
+  .brand span{color:var(--nebula);}
   nav{display:flex; gap:22px;}
   nav a{color:var(--muted); font-size:13px; font-family:'IBM Plex Mono', monospace;}
-  nav a:hover{color:var(--saffron);}
+  nav a:hover{color:var(--nebula);}
   .status-pill{
     display:flex; align-items:center; gap:6px;
     font-family:'IBM Plex Mono', monospace; font-size:11px;
-    color:var(--saffron); border:1px solid var(--border); border-radius:20px;
+    color:var(--amber); border:1px solid var(--border); border-radius:20px;
     padding:4px 10px;
   }
-  .dot{width:6px; height:6px; border-radius:50%; background:var(--saffron); animation:pulse 2s infinite;}
+  .dot{width:6px; height:6px; border-radius:50%; background:var(--amber); animation:pulse 2s infinite;}
   @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.3;}}
 
-  .hero{padding:64px 0 48px; border-bottom:1px solid var(--border);}
+  .hero{padding:70px 0 48px; border-bottom:1px solid var(--border); position:relative;}
+  .stars{
+    position:absolute; top:0; left:0; right:0; height:100%; pointer-events:none; z-index:0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 20px 30px, rgba(255,179,71,0.6), transparent),
+      radial-gradient(1.5px 1.5px at 140px 80px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 250px 20px, rgba(255,107,53,0.5), transparent),
+      radial-gradient(1.5px 1.5px at 340px 100px, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 420px 50px, rgba(255,179,71,0.5), transparent),
+      radial-gradient(1.5px 1.5px at 520px 90px, rgba(255,255,255,0.35), transparent),
+      radial-gradient(1px 1px at 620px 30px, rgba(255,107,53,0.4), transparent),
+      radial-gradient(1.5px 1.5px at 720px 70px, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 800px 20px, rgba(255,179,71,0.4), transparent);
+    background-repeat:repeat;
+    background-size:850px 140px;
+  }
+  .hero-content{position:relative; z-index:1;}
   .eyebrow{
     font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:1.5px;
-    color:var(--saffron); text-transform:uppercase; margin-bottom:14px;
+    color:var(--amber); text-transform:uppercase; margin-bottom:14px;
   }
-  h1{font-size:38px; font-weight:600; letter-spacing:-0.5px; margin-bottom:14px;}
+  h1{font-size:38px; font-weight:600; letter-spacing:-0.5px; margin-bottom:14px;
+     background:linear-gradient(90deg, var(--text) 0%, var(--nebula) 130%);
+     -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;}
   .hero p.summary{color:var(--muted); font-size:16px; max-width:620px; margin-bottom:26px;}
   .contact-row{display:flex; flex-wrap:wrap; gap:18px; font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--muted);}
   .contact-row a{color:var(--muted);}
-  .contact-row a:hover{color:var(--saffron);}
+  .contact-row a:hover{color:var(--nebula);}
 
   section{padding:52px 0; border-bottom:1px solid var(--border);}
   .section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:28px;}
-  .section-num{font-family:'IBM Plex Mono', monospace; color:var(--muted); font-size:13px;}
+  .section-num{font-family:'IBM Plex Mono', monospace; color:var(--deep); font-size:13px;}
   h2{font-size:20px; font-weight:600;}
 
   .about-text{color:var(--muted); font-size:15px; max-width:680px;}
@@ -95,7 +117,7 @@
   .log-id .tag{
     display:inline-block; margin-top:8px;
     background:var(--panel-2); border:1px solid var(--border); border-radius:3px;
-    padding:2px 8px; font-size:10px; color:var(--saffron); letter-spacing:0.5px;
+    padding:2px 8px; font-size:10px; color:var(--nebula); letter-spacing:0.5px;
   }
   .log-role{font-size:15.5px; font-weight:600; margin-bottom:2px;}
   .log-org{color:var(--muted); font-size:13.5px; margin-bottom:12px;}
@@ -122,7 +144,7 @@
     font-size:13.5px; color:var(--text);
     background:var(--panel); border:1px solid var(--border); border-radius:6px; padding:12px 16px;
   }
-  .cert-item .check{color:var(--saffron); font-family:'IBM Plex Mono', monospace; font-size:13px;}
+  .cert-item .check{color:var(--nebula); font-family:'IBM Plex Mono', monospace; font-size:13px;}
 
   footer{padding:48px 0; text-align:center;}
   footer p{color:var(--muted); font-size:13px; font-family:'IBM Plex Mono', monospace;}
@@ -155,14 +177,17 @@
 <div class="wrap">
 
   <div class="hero">
-    <div class="eyebrow">// Cybersecurity — SOC Analyst</div>
-    <h1>Ankush Samundre</h1>
-    <p class="summary">Motivated and detail-oriented cybersecurity graduate student experienced in security operations, threat analysis, and network security fundamentals. Skilled in SIEM monitoring, incident triage, and vulnerability assessment, with hands-on exposure gained through industry training and academic projects. Building toward a SOC Analyst role and blue-team defence expertise.</p>
-    <div class="contact-row">
-      <span>Newtown, NSW</span>
-      <a href="mailto:ankushsamundre01@gmail.com">ankushsamundre01@gmail.com</a>
-      <span>+61 0490 335 551</span>
-      <span>LinkedIn</span>
+    <div class="stars"></div>
+    <div class="hero-content">
+      <div class="eyebrow">// Cybersecurity — SOC Analyst</div>
+      <h1>Ankush Samundre</h1>
+      <p class="summary">Motivated and detail-oriented cybersecurity graduate student experienced in security operations, threat analysis, and network security fundamentals. Skilled in SIEM monitoring, incident triage, and vulnerability assessment, with hands-on exposure gained through industry training and academic projects. Building toward a SOC Analyst role and blue-team defence expertise.</p>
+      <div class="contact-row">
+        <span>Newtown, NSW</span>
+        <a href="mailto:ankushsamundre01@gmail.com">ankushsamundre01@gmail.com</a>
+        <span>+61 0490 335 551</span>
+        <span>LinkedIn</span>
+      </div>
     </div>
   </div>
 
