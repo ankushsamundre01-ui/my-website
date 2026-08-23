@@ -1,27 +1,305 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Ankush Samundre</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankush Samundre — Cybersecurity / SOC Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0F14;
+    --panel:#111820;
+    --panel-2:#0E141B;
+    --border:#20303D;
+    --text:#E7EDF2;
+    --muted:#84939F;
+    --teal:#35C48D;
+    --amber:#E2A039;
+    --red:#D9634F;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+  }
+  a{color:var(--teal); text-decoration:none;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .wrap{max-width:900px; margin:0 auto; padding:0 24px;}
+
+  .topbar{
+    position:sticky; top:0; z-index:10;
+    background:rgba(11,15,20,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  .topbar-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+    max-width:900px; margin:0 auto;
+  }
+  .brand{font-family:'IBM Plex Mono', monospace; font-size:14px; letter-spacing:0.5px; color:var(--text);}
+  .brand span{color:var(--teal);}
+  nav{display:flex; gap:22px;}
+  nav a{color:var(--muted); font-size:13px; font-family:'IBM Plex Mono', monospace;}
+  nav a:hover{color:var(--teal);}
+  .status-pill{
+    display:flex; align-items:center; gap:6px;
+    font-family:'IBM Plex Mono', monospace; font-size:11px;
+    color:var(--teal); border:1px solid var(--border); border-radius:20px;
+    padding:4px 10px;
+  }
+  .dot{width:6px; height:6px; border-radius:50%; background:var(--teal); animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.3;}}
+
+  .hero{padding:64px 0 48px; border-bottom:1px solid var(--border);}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:1.5px;
+    color:var(--teal); text-transform:uppercase; margin-bottom:14px;
+  }
+  h1{font-size:38px; font-weight:600; letter-spacing:-0.5px; margin-bottom:14px;}
+  .hero p.summary{color:var(--muted); font-size:16px; max-width:620px; margin-bottom:26px;}
+  .contact-row{display:flex; flex-wrap:wrap; gap:18px; font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--muted);}
+  .contact-row a{color:var(--muted);}
+  .contact-row a:hover{color:var(--teal);}
+
+  section{padding:52px 0; border-bottom:1px solid var(--border);}
+  .section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:28px;}
+  .section-num{font-family:'IBM Plex Mono', monospace; color:var(--muted); font-size:13px;}
+  h2{font-size:20px; font-weight:600;}
+
+  .about-text{color:var(--muted); font-size:15px; max-width:680px;}
+
+  .skills-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+  .skill-card{
+    background:var(--panel); border:1px solid var(--border); border-radius:6px; padding:18px 20px;
+  }
+  .skill-card h3{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.5px;
+    color:var(--amber); text-transform:uppercase; margin-bottom:10px;
+  }
+  .skill-card ul{list-style:none; font-size:13.5px; color:var(--text); display:flex; flex-wrap:wrap; gap:8px;}
+  .skill-card li{
+    background:var(--panel-2); border:1px solid var(--border); border-radius:4px;
+    padding:4px 10px; font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--muted);
+  }
+
+  .log-entry{
+    display:grid; grid-template-columns:130px 1fr; gap:20px;
+    padding:22px 0; border-top:1px solid var(--border);
+  }
+  .log-entry:first-of-type{border-top:none;}
+  .log-id{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--muted);}
+  .log-id .tag{
+    display:inline-block; margin-top:8px;
+    background:var(--panel-2); border:1px solid var(--border); border-radius:3px;
+    padding:2px 8px; font-size:10px; color:var(--teal); letter-spacing:0.5px;
+  }
+  .log-role{font-size:15.5px; font-weight:600; margin-bottom:2px;}
+  .log-org{color:var(--muted); font-size:13.5px; margin-bottom:12px;}
+  .log-body ul{padding-left:18px; color:var(--muted); font-size:13.5px;}
+  .log-body li{margin-bottom:6px;}
+
+  .project-card{
+    background:var(--panel); border:1px solid var(--border); border-radius:6px;
+    padding:20px 22px; margin-bottom:14px;
+  }
+  .project-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; flex-wrap:wrap; gap:8px;}
+  .project-top h3{font-size:15px; font-weight:600;}
+  .project-ref{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted); border:1px solid var(--border); border-radius:3px; padding:2px 8px;}
+  .project-card ul{padding-left:18px; color:var(--muted); font-size:13.5px;}
+  .project-card li{margin-bottom:5px;}
+
+  .edu-item{margin-bottom:20px;}
+  .edu-item h3{font-size:15px; font-weight:600;}
+  .edu-item p{color:var(--muted); font-size:13.5px; margin-top:2px;}
+
+  .cert-list{display:flex; flex-direction:column; gap:10px;}
+  .cert-item{
+    display:flex; align-items:center; gap:10px;
+    font-size:13.5px; color:var(--text);
+    background:var(--panel); border:1px solid var(--border); border-radius:6px; padding:12px 16px;
+  }
+  .cert-item .check{color:var(--teal); font-family:'IBM Plex Mono', monospace; font-size:13px;}
+
+  footer{padding:48px 0; text-align:center;}
+  footer p{color:var(--muted); font-size:13px; font-family:'IBM Plex Mono', monospace;}
+
+  @media (max-width:640px){
+    nav{display:none;}
+    h1{font-size:28px;}
+    .skills-grid{grid-template-columns:1fr;}
+    .log-entry{grid-template-columns:1fr;}
+  }
+</style>
 </head>
 <body>
-  <h1>Hi, I'm Ankush Samundre</h1>
-  <p>Cybersecurity student at the University of Sydney</p>
-  <p>Based in Sydney, Australia</p>
 
-  <h2>About Me</h2>
-  <p>I'm currently completing my Master of Computer Science with a specialisation in Cybersecurity. 
-  I'm passionate about protecting systems and data, and I'm looking for opportunities in SOC Analyst roles.</p>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">ANKUSH<span>.</span>SAMUNDRE</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="status-pill"><span class="dot"></span>OPEN TO WORK</div>
+  </div>
+</div>
 
-  <h2>Skills</h2>
-  <ul>
-    <li>Network Security</li>
-    <li>Threat Detection & Analysis</li>
-    <li>Incident Response</li>
-    <li>Python / Scripting</li>
-  </ul>
+<div class="wrap">
 
-  <h2>Contact</h2>
-  <p>Email: ankushsamundre01@gmail.com</p>
+  <div class="hero">
+    <div class="eyebrow">// Cybersecurity — SOC Analyst</div>
+    <h1>Ankush Samundre</h1>
+    <p class="summary">Motivated and detail-oriented cybersecurity graduate student experienced in security operations, threat analysis, and network security fundamentals. Skilled in SIEM monitoring, incident triage, and vulnerability assessment, with hands-on exposure gained through industry training and academic projects. Building toward a SOC Analyst role and blue-team defence expertise.</p>
+    <div class="contact-row">
+      <span>Newtown, NSW</span>
+      <a href="mailto:ankushsamundre01@gmail.com">ankushsamundre01@gmail.com</a>
+      <span>+61 0490 335 551</span>
+      <span>LinkedIn</span>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="section-head"><span class="section-num mono">01</span><h2>About</h2></div>
+    <p class="about-text">I'm completing a Master of Computer Science, specialising in Cybersecurity, at the University of Sydney. My background combines academic study in TLS/network security and cryptography with hands-on trainee exposure to SIEM monitoring, phishing analysis, and SOC escalation workflows — and I'm now looking to bring that into a full-time SOC Analyst role.</p>
+  </section>
+
+  <section id="skills">
+    <div class="section-head"><span class="section-num mono">02</span><h2>Technical skills</h2></div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Security tools</h3>
+        <ul><li>SIEM (Splunk)</li><li>SIEM (QRadar)</li><li>Firewalls</li><li>IDS / IPS</li><li>DLP</li><li>Wireshark</li></ul>
+      </div>
+      <div class="skill-card">
+        <h3>Network security</h3>
+        <ul><li>TCP/IP</li><li>DNS</li><li>HTTP/HTTPS</li><li>VPN</li><li>Traffic Analysis</li></ul>
+      </div>
+      <div class="skill-card">
+        <h3>Systems</h3>
+        <ul><li>Windows Security</li><li>Linux Security</li><li>Endpoint Security</li></ul>
+      </div>
+      <div class="skill-card">
+        <h3>Crypto & forensics</h3>
+        <ul><li>AES (manual analysis)</li><li>OSINT</li><li>Dark Web Intelligence</li></ul>
+      </div>
+      <div class="skill-card">
+        <h3>Programming</h3>
+        <ul><li>Python</li><li>Scripting</li><li>Automation</li></ul>
+      </div>
+      <div class="skill-card">
+        <h3>Core skills</h3>
+        <ul><li>Threat Hunting</li><li>Incident Escalation</li><li>Vulnerability Assessment</li><li>Risk Analysis</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-head"><span class="section-num mono">03</span><h2>Experience log</h2></div>
+
+    <div class="log-entry">
+      <div class="log-id">
+        Oct 2022 – Apr 2024
+        <div class="tag">TRAINEESHIP</div>
+      </div>
+      <div class="log-body">
+        <div class="log-role">Cybersecurity Trainee — Security Operations Exposure</div>
+        <div class="log-org">ICEICO Technologies Pvt. Ltd. · Mumbai, India</div>
+        <ul>
+          <li>Observed and assisted with SIEM-based security monitoring, including log review and alert analysis</li>
+          <li>Gained hands-on exposure to firewalls, IDS/IPS, DLP systems, and enterprise security monitoring tools</li>
+          <li>Assisted in phishing email analysis and identification of suspicious indicators</li>
+          <li>Supported threat analysis and security incident observation alongside senior analysts</li>
+          <li>Collaborated with the SOC team to understand escalation procedures and incident workflows</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-id">
+        Aug 2022 – Oct 2022
+        <div class="tag">TRAINING</div>
+      </div>
+      <div class="log-body">
+        <div class="log-role">High-Tech Entrepreneurship Development Programme</div>
+        <div class="log-org">Maharashtra Centre for Entrepreneurship Development · Maharashtra, India</div>
+        <ul>
+          <li>Gained hands-on exposure to cybersecurity fundamentals and digital forensics concepts</li>
+          <li>Trained in data recovery techniques, security analysis, and cyber incident awareness</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head"><span class="section-num mono">04</span><h2>Projects</h2></div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <h3>TLS Analysis, Exploitation & Firewall Design</h3>
+        <span class="project-ref mono">CSEC5616 · 2025</span>
+      </div>
+      <ul>
+        <li>Conducted TLS handshake and traffic analysis using Wireshark to identify encryption behaviour and security gaps</li>
+        <li>Investigated buffer overflow exploitation techniques and documented mitigation strategies</li>
+        <li>Designed firewall rule sets and network segmentation controls; analysed the Ticketmaster data breach as a vendor-risk case study</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <h3>AES Manual Encryption Analysis</h3>
+        <span class="project-ref mono">CSEC5616 · 2025</span>
+      </div>
+      <ul>
+        <li>Performed manual round-by-round AES encryption calculations to build low-level understanding of block cipher cryptography</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <h3>Smart Study Tracker</h3>
+        <span class="project-ref mono">COMP9001 · 2025</span>
+      </div>
+      <ul>
+        <li>Built and debugged a terminal-based Python application from requirements through to a working, presentable final product</li>
+        <li>Applied structured problem-solving and iterative testing to resolve logic and indentation errors</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><span class="section-num mono">05</span><h2>Education</h2></div>
+    <div class="edu-item">
+      <h3>University of Sydney — Master of Computer Science</h3>
+      <p>Specialisation: Cybersecurity · Sydney, Australia · Jul 2024 – Present</p>
+    </div>
+    <div class="edu-item">
+      <h3>RTM Nagpur University — Bachelor of Science, Information Technology</h3>
+      <p>Nagpur, India · Completed Jun 2022</p>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="section-head"><span class="section-num mono">06</span><h2>Certifications</h2></div>
+    <div class="cert-list">
+      <div class="cert-item"><span class="check">[✓]</span> Introduction to Dark Web, Anonymity & Cryptocurrency — Tor routing, anonymisation techniques, cybercrime analysis</div>
+      <div class="cert-item"><span class="check">[✓]</span> Certified Dark Web Analyst, Forensic Academy — dark web investigations, threat actor profiling, OSINT techniques</div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>ankushsamundre01@gmail.com &nbsp;·&nbsp; +61 0490 335 551 &nbsp;·&nbsp; Newtown, NSW, Australia</p>
+  </footer>
+
+</div>
 
 </body>
 </html>
