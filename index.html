@@ -3,14 +3,11 @@
 
 <head>
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Ankush Samundre - Cybersecurity / SOC Analyst</title>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link
 href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
@@ -42,23 +39,21 @@ html{
 
 body{
     background:
-    radial-gradient(
-        ellipse 900px 600px at 10% -10%,
-        rgba(255,107,53,0.20),
-        transparent 60%
-    ),
-    radial-gradient(
-        ellipse 700px 500px at 100% 0%,
-        rgba(232,135,30,0.18),
-        transparent 60%
-    ),
-    var(--bg);
+        radial-gradient(
+            ellipse 900px 600px at 10% -10%,
+            rgba(255,107,53,0.20),
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 700px 500px at 100% 0%,
+            rgba(232,135,30,0.18),
+            transparent 60%
+        ),
+        var(--bg);
 
     background-attachment:fixed;
     color:var(--text);
-
     font-family:'IBM Plex Sans', sans-serif;
-
     line-height:1.65;
 }
 
@@ -80,7 +75,7 @@ a{
 
 
 /* =========================
-   TOP NAVIGATION
+   TOP BAR
 ========================= */
 
 .topbar{
@@ -91,6 +86,7 @@ a{
     background:rgba(255,246,236,0.88);
 
     backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
 
     border-bottom:1px solid var(--border);
 }
@@ -108,13 +104,9 @@ a{
 
 .brand{
     font-family:'IBM Plex Mono', monospace;
-
     font-size:14px;
-
     font-weight:600;
-
     letter-spacing:0.5px;
-
     color:var(--text);
 }
 
@@ -122,42 +114,29 @@ a{
     color:var(--nebula);
 }
 
-
 nav{
     display:flex;
-
-    gap:26px;
+    gap:22px;
+    align-items:center;
 }
 
 nav a{
     color:var(--muted);
-
     font-size:13px;
-
     font-family:'IBM Plex Mono', monospace;
-
     position:relative;
-
     padding:4px 0;
-
     transition:color 0.2s;
 }
 
 nav a::after{
     content:'';
-
     position:absolute;
-
     left:0;
-
     bottom:0;
-
     height:1px;
-
     width:0;
-
     background:var(--nebula);
-
     transition:width 0.25s;
 }
 
@@ -169,28 +148,19 @@ nav a:hover::after{
     width:100%;
 }
 
-
-/* OPEN TO WORK */
-
 .status-pill{
     display:flex;
-
     align-items:center;
-
     gap:6px;
 
     font-family:'IBM Plex Mono', monospace;
-
     font-size:11px;
-
     font-weight:600;
 
     color:var(--deep);
-
     background:var(--panel-2);
 
     border:1px solid var(--border);
-
     border-radius:20px;
 
     padding:5px 12px;
@@ -198,18 +168,13 @@ nav a:hover::after{
 
 .dot{
     width:6px;
-
     height:6px;
-
     border-radius:50%;
-
     background:var(--nebula);
-
     animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
-
     0%,100%{
         opacity:1;
     }
@@ -217,7 +182,6 @@ nav a:hover::after{
     50%{
         opacity:0.3;
     }
-
 }
 
 
@@ -226,38 +190,29 @@ nav a:hover::after{
 ========================= */
 
 .hero{
-
     padding:88px 0 60px;
-
     border-bottom:1px solid var(--border);
-
     position:relative;
-
     overflow:hidden;
 }
 
-
 .glow-orb{
-
     position:absolute;
-
     top:-160px;
-
     right:-120px;
 
     width:440px;
-
     height:440px;
 
     border-radius:50%;
 
     background:
-    radial-gradient(
-        circle,
-        rgba(255,107,53,0.32),
-        rgba(255,179,71,0.1) 60%,
-        transparent 75%
-    );
+        radial-gradient(
+            circle,
+            rgba(255,107,53,0.32),
+            rgba(255,179,71,0.1) 60%,
+            transparent 75%
+        );
 
     filter:blur(4px);
 
@@ -266,9 +221,7 @@ nav a:hover::after{
     animation:drift 9s ease-in-out infinite;
 }
 
-
 @keyframes drift{
-
     0%,100%{
         transform:translate(0,0);
     }
@@ -276,18 +229,13 @@ nav a:hover::after{
     50%{
         transform:translate(-18px,16px);
     }
-
 }
 
-
 .stars{
-
     position:absolute;
 
     top:0;
-
     left:0;
-
     right:0;
 
     height:100%;
@@ -298,67 +246,60 @@ nav a:hover::after{
 
     background-image:
 
-    radial-gradient(
-        2px 2px at 30px 40px,
-        rgba(255,107,53,0.55),
-        transparent
-    ),
+        radial-gradient(
+            2px 2px at 30px 40px,
+            rgba(255,107,53,0.55),
+            transparent
+        ),
 
-    radial-gradient(
-        2px 2px at 160px 90px,
-        rgba(232,135,30,0.5),
-        transparent
-    ),
+        radial-gradient(
+            2px 2px at 160px 90px,
+            rgba(232,135,30,0.5),
+            transparent
+        ),
 
-    radial-gradient(
-        1.5px 1.5px at 260px 30px,
-        rgba(193,68,14,0.4),
-        transparent
-    ),
+        radial-gradient(
+            1.5px 1.5px at 260px 30px,
+            rgba(193,68,14,0.4),
+            transparent
+        ),
 
-    radial-gradient(
-        2px 2px at 380px 110px,
-        rgba(255,107,53,0.4),
-        transparent
-    ),
+        radial-gradient(
+            2px 2px at 380px 110px,
+            rgba(255,107,53,0.4),
+            transparent
+        ),
 
-    radial-gradient(
-        1.5px 1.5px at 480px 60px,
-        rgba(232,135,30,0.45),
-        transparent
-    ),
+        radial-gradient(
+            1.5px 1.5px at 480px 60px,
+            rgba(232,135,30,0.45),
+            transparent
+        ),
 
-    radial-gradient(
-        2px 2px at 600px 95px,
-        rgba(193,68,14,0.35),
-        transparent
-    ),
+        radial-gradient(
+            2px 2px at 600px 95px,
+            rgba(193,68,14,0.35),
+            transparent
+        ),
 
-    radial-gradient(
-        1.5px 1.5px at 700px 40px,
-        rgba(255,107,53,0.4),
-        transparent
-    );
+        radial-gradient(
+            1.5px 1.5px at 700px 40px,
+            rgba(255,107,53,0.4),
+            transparent
+        );
 
     background-repeat:repeat;
-
     background-size:780px 140px;
 }
 
-
 .hero-content{
     position:relative;
-
     z-index:1;
 }
 
-
 .eyebrow{
-
     font-family:'IBM Plex Mono', monospace;
-
     font-size:12px;
-
     font-weight:600;
 
     letter-spacing:1.5px;
@@ -380,13 +321,9 @@ nav a:hover::after{
     border-radius:20px;
 }
 
-
 h1{
-
     font-size:46px;
-
     font-weight:700;
-
     letter-spacing:-1px;
 
     margin-bottom:16px;
@@ -394,51 +331,36 @@ h1{
     line-height:1.1;
 
     background:
-    linear-gradient(
-        90deg,
-        var(--deep) 0%,
-        var(--nebula) 55%,
-        var(--amber) 100%
-    );
+        linear-gradient(
+            90deg,
+            var(--deep) 0%,
+            var(--nebula) 55%,
+            var(--amber) 100%
+        );
 
     -webkit-background-clip:text;
-
     background-clip:text;
-
     -webkit-text-fill-color:transparent;
 }
 
-
 .hero p.summary{
-
     color:var(--muted);
-
     font-size:16.5px;
-
     max-width:600px;
-
     margin-bottom:30px;
 }
 
-
 .cta-row{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:12px;
-
     margin-bottom:34px;
 }
 
-
 .btn{
-
     font-family:'IBM Plex Mono', monospace;
 
     font-size:13px;
-
     font-weight:600;
 
     padding:11px 22px;
@@ -446,8 +368,8 @@ h1{
     border-radius:8px;
 
     transition:
-    transform 0.15s,
-    box-shadow 0.15s;
+        transform 0.15s,
+        box-shadow 0.15s;
 
     display:inline-flex;
 
@@ -456,54 +378,40 @@ h1{
     gap:8px;
 }
 
-
 .btn-primary{
-
     background:
-    linear-gradient(
-        90deg,
-        var(--nebula),
-        var(--deep)
-    );
+        linear-gradient(
+            90deg,
+            var(--nebula),
+            var(--deep)
+        );
 
     color:#FFF6EC;
 
     box-shadow:
-    0 4px 16px rgba(255,107,53,0.28);
+        0 4px 16px rgba(255,107,53,0.28);
 }
 
-
 .btn-primary:hover{
-
     transform:translateY(-2px);
 
     box-shadow:
-    0 6px 20px rgba(255,107,53,0.38);
+        0 6px 20px rgba(255,107,53,0.38);
 }
 
-
 .btn-secondary{
-
     background:var(--panel);
-
     border:1px solid var(--border);
-
     color:var(--deep);
 }
 
-
 .btn-secondary:hover{
-
     transform:translateY(-2px);
-
     border-color:var(--nebula);
 }
 
-
 .contact-row{
-
     display:flex;
-
     flex-wrap:wrap;
 
     gap:20px;
@@ -515,11 +423,9 @@ h1{
     color:var(--muted);
 }
 
-
 .contact-row a{
     color:var(--deep);
 }
-
 
 .contact-row a:hover{
     color:var(--nebula);
@@ -531,7 +437,6 @@ h1{
 ========================= */
 
 section{
-
     padding:56px 0;
 
     border-bottom:1px solid var(--border);
@@ -541,57 +446,37 @@ section{
     transform:translateY(16px);
 
     transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+        opacity 0.6s ease,
+        transform 0.6s ease;
 }
 
-
 section.visible{
-
     opacity:1;
-
     transform:translateY(0);
 }
 
-
 .section-head{
-
     display:flex;
-
     align-items:baseline;
-
     gap:12px;
-
     margin-bottom:30px;
 }
 
-
 .section-num{
-
     font-family:'IBM Plex Mono', monospace;
-
     color:var(--nebula);
-
     font-size:13px;
-
     font-weight:600;
 }
 
-
 h2{
-
     font-size:21px;
-
     font-weight:700;
 }
 
-
 .about-text{
-
     color:var(--muted);
-
     font-size:15.5px;
-
     max-width:680px;
 }
 
@@ -601,18 +486,12 @@ h2{
 ========================= */
 
 .skills-grid{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:14px;
 }
 
-
 .skill-card{
-
     background:var(--panel);
 
     border:1px solid var(--border);
@@ -622,25 +501,21 @@ h2{
     padding:20px 22px;
 
     box-shadow:
-    0 2px 12px rgba(255,107,53,0.06);
+        0 2px 12px rgba(255,107,53,0.06);
 
     transition:
-    transform 0.2s,
-    box-shadow 0.2s;
+        transform 0.2s,
+        box-shadow 0.2s;
 }
 
-
 .skill-card:hover{
-
     transform:translateY(-3px);
 
     box-shadow:
-    0 8px 24px rgba(255,107,53,0.14);
+        0 8px 24px rgba(255,107,53,0.14);
 }
 
-
 .skill-card h3{
-
     font-family:'IBM Plex Mono', monospace;
 
     font-size:12px;
@@ -656,9 +531,7 @@ h2{
     margin-bottom:12px;
 }
 
-
 .skill-card ul{
-
     list-style:none;
 
     font-size:13.5px;
@@ -672,9 +545,7 @@ h2{
     gap:8px;
 }
 
-
 .skill-card li{
-
     background:var(--panel-2);
 
     border:1px solid var(--border);
@@ -690,17 +561,13 @@ h2{
     color:var(--muted);
 
     transition:
-    background 0.15s,
-    color 0.15s;
+        background 0.15s,
+        color 0.15s;
 }
 
-
 .skill-card li:hover{
-
     background:var(--nebula);
-
     color:#FFF6EC;
-
     border-color:var(--nebula);
 }
 
@@ -710,12 +577,8 @@ h2{
 ========================= */
 
 .log-entry{
-
     display:grid;
-
-    grid-template-columns:
-    140px 1fr;
-
+    grid-template-columns:140px 1fr;
     gap:22px;
 
     padding:26px 0;
@@ -723,25 +586,17 @@ h2{
     border-top:1px solid var(--border);
 }
 
-
 .log-entry:first-of-type{
-
     border-top:none;
 }
 
-
 .log-id{
-
     font-family:'IBM Plex Mono', monospace;
-
     font-size:12px;
-
     color:var(--muted);
 }
 
-
 .log-id .tag{
-
     display:inline-block;
 
     margin-top:8px;
@@ -763,39 +618,25 @@ h2{
     letter-spacing:0.5px;
 }
 
-
 .log-role{
-
     font-size:16px;
-
     font-weight:700;
-
     margin-bottom:2px;
 }
 
-
 .log-org{
-
     color:var(--muted);
-
     font-size:13.5px;
-
     margin-bottom:14px;
 }
 
-
 .log-body ul{
-
     padding-left:18px;
-
     color:var(--muted);
-
     font-size:13.5px;
 }
 
-
 .log-body li{
-
     margin-bottom:7px;
 }
 
@@ -805,7 +646,6 @@ h2{
 ========================= */
 
 .project-card{
-
     background:var(--panel);
 
     border:1px solid var(--border);
@@ -817,25 +657,21 @@ h2{
     margin-bottom:14px;
 
     box-shadow:
-    0 2px 12px rgba(255,107,53,0.06);
+        0 2px 12px rgba(255,107,53,0.06);
 
     transition:
-    transform 0.2s,
-    box-shadow 0.2s;
+        transform 0.2s,
+        box-shadow 0.2s;
 }
 
-
 .project-card:hover{
-
     transform:translateY(-3px);
 
     box-shadow:
-    0 8px 24px rgba(255,107,53,0.14);
+        0 8px 24px rgba(255,107,53,0.14);
 }
 
-
 .project-top{
-
     display:flex;
 
     justify-content:space-between;
@@ -849,17 +685,12 @@ h2{
     gap:8px;
 }
 
-
 .project-top h3{
-
     font-size:15.5px;
-
     font-weight:700;
 }
 
-
 .project-ref{
-
     font-family:'IBM Plex Mono', monospace;
 
     font-size:11px;
@@ -877,19 +708,13 @@ h2{
     background:var(--panel-2);
 }
 
-
 .project-card ul{
-
     padding-left:18px;
-
     color:var(--muted);
-
     font-size:13.5px;
 }
 
-
 .project-card li{
-
     margin-bottom:6px;
 }
 
@@ -899,7 +724,6 @@ h2{
 ========================= */
 
 .edu-item{
-
     margin-bottom:22px;
 
     padding-left:18px;
@@ -909,9 +733,7 @@ h2{
     position:relative;
 }
 
-
 .edu-item::before{
-
     content:'';
 
     position:absolute;
@@ -929,21 +751,14 @@ h2{
     background:var(--nebula);
 }
 
-
 .edu-item h3{
-
     font-size:15.5px;
-
     font-weight:700;
 }
 
-
 .edu-item p{
-
     color:var(--muted);
-
     font-size:13.5px;
-
     margin-top:3px;
 }
 
@@ -953,17 +768,12 @@ h2{
 ========================= */
 
 .cert-list{
-
     display:flex;
-
     flex-direction:column;
-
     gap:10px;
 }
 
-
 .cert-item{
-
     display:flex;
 
     align-items:center;
@@ -983,26 +793,21 @@ h2{
     padding:14px 18px;
 
     box-shadow:
-    0 2px 12px rgba(255,107,53,0.06);
+        0 2px 12px rgba(255,107,53,0.06);
 
     transition:transform 0.2s;
 }
 
-
 .cert-item:hover{
-
     transform:translateX(4px);
 }
 
-
 .cert-item .check{
-
     color:#FFF6EC;
 
     background:var(--nebula);
 
     width:20px;
-
     height:20px;
 
     border-radius:50%;
@@ -1024,15 +829,11 @@ h2{
 ========================= */
 
 footer{
-
     padding:56px 0 40px;
-
     text-align:center;
 }
 
-
 footer p{
-
     color:var(--muted);
 
     font-size:13px;
@@ -1040,15 +841,10 @@ footer p{
     font-family:'IBM Plex Mono', monospace;
 }
 
-
 footer .footer-name{
-
     font-size:15px;
-
     font-weight:700;
-
     color:var(--text);
-
     margin-bottom:10px;
 }
 
@@ -1074,10 +870,10 @@ footer .footer-name{
     .log-entry{
         grid-template-columns:1fr;
     }
-
 }
 
 </style>
+
 </head>
 
 
@@ -1085,68 +881,67 @@ footer .footer-name{
 
 
 <!-- =========================
-     TOP MENU
+     TOP NAVIGATION
 ========================= -->
 
 <div class="topbar">
 
-<div class="topbar-inner">
+    <div class="topbar-inner">
 
-<div class="brand">
-ANKUSH<span>.</span>SAMUNDRE
-</div>
-
-
-<nav>
-
-<a href="#about">
-About
-</a>
-
-<a href="#skills">
-Skills
-</a>
-
-<a href="#experience">
-Experience
-</a>
-
-<a href="#projects">
-Projects
-</a>
-
-<a href="#education">
-Education
-</a>
+        <div class="brand">
+            ANKUSH<span>.</span>SAMUNDRE
+        </div>
 
 
-<!-- RESUME OPENS IN NEW TAB -->
+        <nav>
 
-<a
-href="Ankush_Samundre_Resume.pdf"
-target="_blank"
-rel="noopener noreferrer"
->
-Resume
-</a>
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#skills">
+                Skills
+            </a>
+
+            <a href="#experience">
+                Experience
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#education">
+                Education
+            </a>
 
 
-<a href="#contact">
-Contact
-</a>
+            <!-- RESUME -->
+            <a
+                href="./Ankush_Samundre_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Resume
+            </a>
 
-</nav>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
 
 
-<div class="status-pill">
+        <div class="status-pill">
 
-<span class="dot"></span>
+            <span class="dot"></span>
 
-OPEN TO WORK
+            OPEN TO WORK
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </div>
 
@@ -1161,125 +956,110 @@ OPEN TO WORK
 
 <div class="hero">
 
+    <div class="glow-orb"></div>
 
-<div class="glow-orb"></div>
-
-<div class="stars"></div>
-
-
-<div class="hero-content">
+    <div class="stars"></div>
 
 
-<div class="eyebrow">
-
-// Cybersecurity - SOC Analyst
-
-</div>
+    <div class="hero-content">
 
 
-<h1>
+        <div class="eyebrow">
 
-Ankush Samundre
+            // Cybersecurity - SOC Analyst
 
-</h1>
-
-
-<p class="summary">
-
-Motivated and detail-oriented cybersecurity graduate student
-experienced in security operations, threat analysis, and
-network security fundamentals.
-
-Skilled in SIEM monitoring, incident triage, and vulnerability
-assessment, with hands-on exposure gained through industry
-training and academic projects.
-
-Building toward a SOC Analyst role and blue-team defence expertise.
-
-</p>
+        </div>
 
 
+        <h1>
 
-<div class="cta-row">
+            Ankush Samundre
 
-
-<a
-href="mailto:ankushsamundre01@gmail.com"
-class="btn btn-primary"
->
-
-Get in touch
-
-</a>
+        </h1>
 
 
+        <p class="summary">
 
-<a
-href="#experience"
-class="btn btn-secondary"
->
+            Motivated and detail-oriented cybersecurity graduate student
+            experienced in security operations, threat analysis, and
+            network security fundamentals. Skilled in SIEM monitoring,
+            incident triage, and vulnerability assessment, with hands-on
+            exposure gained through industry training and academic projects.
+            Building toward a SOC Analyst role and blue-team defence expertise.
 
-View experience
-
-</a>
-
-
-
-<!-- RESUME BUTTON -->
-
-<a
-href="Ankush_Samundre_Resume.pdf"
-target="_blank"
-rel="noopener noreferrer"
-class="btn btn-secondary"
->
-
-View Resume
-
-</a>
+        </p>
 
 
-</div>
+        <div class="cta-row">
 
 
-
-<div class="contact-row">
-
-
-<span>
-
-Newtown, NSW
-
-</span>
+            <a
+                href="mailto:ankushsamundre01@gmail.com"
+                class="btn btn-primary"
+            >
+                Get in touch
+            </a>
 
 
-<a
-href="mailto:ankushsamundre01@gmail.com"
->
-
-ankushsamundre01@gmail.com
-
-</a>
-
-
-<span>
-
-+61 0490 335 551
-
-</span>
+            <a
+                href="#experience"
+                class="btn btn-secondary"
+            >
+                View experience
+            </a>
 
 
-<span>
+            <!-- RESUME BUTTON -->
 
-LinkedIn
+            <a
+                href="./Ankush_Samundre_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+            >
+                View Resume
+            </a>
 
-</span>
+
+        </div>
 
 
-</div>
+        <div class="contact-row">
 
 
-</div>
+            <span>
+
+                Newtown, NSW
+
+            </span>
+
+
+            <a href="mailto:ankushsamundre01@gmail.com">
+
+                ankushsamundre01@gmail.com
+
+            </a>
+
+
+            <span>
+
+                +61 0490 335 551
+
+            </span>
+
+
+            <a
+                href="https://www.linkedin.com/in/ankush-samundre-43b517249/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+
+        </div>
+
+    </div>
 
 </div>
 
@@ -1291,37 +1071,35 @@ LinkedIn
 
 <section id="about">
 
+    <div class="section-head">
 
-<div class="section-head">
+        <span class="section-num mono">
 
-<span class="section-num mono">
+            01
 
-01
+        </span>
 
-</span>
+        <h2>
 
-<h2>
+            About
 
-About
+        </h2>
 
-</h2>
-
-</div>
+    </div>
 
 
-<p class="about-text">
+    <p class="about-text">
 
-I'm completing a Master of Computer Science,
-specialising in Cybersecurity,
-at the University of Sydney.
+        I'm completing a Master of Computer Science,
+        specialising in Cybersecurity,
+        at the University of Sydney.
 
-My background combines academic study in TLS/network security
-and cryptography with hands-on trainee exposure to
-SIEM monitoring, phishing analysis, and SOC escalation workflows
-- and I'm now looking to bring that into a full-time SOC Analyst role.
+        My background combines academic study in TLS/network security
+        and cryptography with hands-on trainee exposure to
+        SIEM monitoring, phishing analysis, and SOC escalation workflows
+        - and I'm now looking to bring that into a full-time SOC Analyst role.
 
-</p>
-
+    </p>
 
 </section>
 
@@ -1333,173 +1111,179 @@ SIEM monitoring, phishing analysis, and SOC escalation workflows
 
 <section id="skills">
 
+    <div class="section-head">
 
-<div class="section-head">
+        <span class="section-num mono">
 
-<span class="section-num mono">
+            02
 
-02
+        </span>
 
-</span>
+        <h2>
 
-<h2>
+            Technical skills
 
-Technical skills
+        </h2>
 
-</h2>
+    </div>
 
-</div>
 
 
+    <div class="skills-grid">
 
-<div class="skills-grid">
 
+        <div class="skill-card">
 
-<div class="skill-card">
+            <h3>
 
-<h3>
+                Security tools
 
-Security tools
+            </h3>
 
-</h3>
+            <ul>
 
-<ul>
+                <li>SIEM (Splunk)</li>
+                <li>SIEM (QRadar)</li>
+                <li>Firewalls</li>
+                <li>IDS / IPS</li>
+                <li>DLP</li>
+                <li>Wireshark</li>
+                <li>API Security</li>
 
-<li>SIEM (Splunk)</li>
+            </ul>
 
-<li>SIEM (QRadar)</li>
+        </div>
 
-<li>Firewalls</li>
 
-<li>IDS / IPS</li>
 
-<li>DLP</li>
+        <div class="skill-card">
 
-<li>Wireshark</li>
+            <h3>
 
-</ul>
+                Network security
 
-</div>
+            </h3>
 
+            <ul>
 
+                <li>TCP/IP</li>
+                <li>DNS</li>
+                <li>HTTP/HTTPS</li>
+                <li>VPN</li>
+                <li>Traffic Analysis</li>
 
-<div class="skill-card">
+            </ul>
 
-<h3>
+        </div>
 
-Network security
 
-</h3>
 
-<ul>
+        <div class="skill-card">
 
-<li>TCP/IP</li>
+            <h3>
 
-<li>DNS</li>
+                Identity & Access
 
-<li>HTTP/HTTPS</li>
+            </h3>
 
-<li>VPN</li>
+            <ul>
 
-<li>Traffic Analysis</li>
+                <li>IAM</li>
+                <li>RBAC</li>
+                <li>Access Control</li>
 
-</ul>
+            </ul>
 
-</div>
+        </div>
 
 
 
-<div class="skill-card">
+        <div class="skill-card">
 
-<h3>
+            <h3>
 
-Systems
+                Systems
 
-</h3>
+            </h3>
 
-<ul>
+            <ul>
 
-<li>Windows Security</li>
+                <li>Windows Security</li>
+                <li>Linux Security</li>
+                <li>Endpoint Security</li>
 
-<li>Linux Security</li>
+            </ul>
 
-<li>Endpoint Security</li>
+        </div>
 
-</ul>
 
-</div>
 
+        <div class="skill-card">
 
+            <h3>
 
-<div class="skill-card">
+                Crypto & Forensics
 
-<h3>
+            </h3>
 
-Crypto & forensics
+            <ul>
 
-</h3>
+                <li>AES</li>
+                <li>OSINT</li>
+                <li>Dark Web Intelligence</li>
 
-<ul>
+            </ul>
 
-<li>AES (manual analysis)</li>
+        </div>
 
-<li>OSINT</li>
 
-<li>Dark Web Intelligence</li>
 
-</ul>
+        <div class="skill-card">
 
-</div>
+            <h3>
 
+                Programming
 
+            </h3>
 
-<div class="skill-card">
+            <ul>
 
-<h3>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Scripting</li>
+                <li>Automation</li>
+                <li>Git</li>
+                <li>GitHub</li>
 
-Programming
+            </ul>
 
-</h3>
+        </div>
 
-<ul>
 
-<li>Python</li>
 
-<li>Scripting</li>
+        <div class="skill-card">
 
-<li>Automation</li>
+            <h3>
 
-</ul>
+                Core Security Skills
 
-</div>
+            </h3>
 
+            <ul>
 
+                <li>Threat Hunting</li>
+                <li>Incident Detection</li>
+                <li>Incident Escalation</li>
+                <li>Vulnerability Assessment</li>
+                <li>Risk Analysis</li>
+                <li>Incident Reporting</li>
 
-<div class="skill-card">
+            </ul>
 
-<h3>
+        </div>
 
-Core skills
 
-</h3>
-
-<ul>
-
-<li>Threat Hunting</li>
-
-<li>Incident Escalation</li>
-
-<li>Vulnerability Assessment</li>
-
-<li>Risk Analysis</li>
-
-</ul>
-
-</div>
-
-
-</div>
-
+    </div>
 
 </section>
 
@@ -1511,171 +1295,146 @@ Core skills
 
 <section id="experience">
 
+    <div class="section-head">
 
-<div class="section-head">
+        <span class="section-num mono">
 
-<span class="section-num mono">
+            03
 
-03
+        </span>
 
-</span>
+        <h2>
 
-<h2>
+            Experience log
 
-Experience log
+        </h2>
 
-</h2>
+    </div>
 
-</div>
 
 
+    <div class="log-entry">
 
-<div class="log-entry">
 
+        <div class="log-id">
 
-<div class="log-id">
+            Oct 2022 - Apr 2024
 
-Oct 2022 - Apr 2024
+            <div class="tag">
 
-<div class="tag">
+                TRAINEESHIP
 
-TRAINEESHIP
+            </div>
 
-</div>
+        </div>
 
-</div>
 
 
+        <div class="log-body">
 
-<div class="log-body">
 
+            <div class="log-role">
 
-<div class="log-role">
+                Cybersecurity Trainee - Security Operations Exposure
 
-Cybersecurity Trainee - Security Operations Exposure
+            </div>
 
-</div>
 
+            <div class="log-org">
 
-<div class="log-org">
+                ICEICO Technologies Pvt. Ltd. · Mumbai, India
 
-ICEICO Technologies Pvt. Ltd. · Mumbai, India
+            </div>
 
-</div>
 
+            <ul>
 
-<ul>
+                <li>
+                    Observed and assisted with SIEM-based security monitoring,
+                    including log review and alert analysis
+                </li>
 
-<li>
+                <li>
+                    Gained hands-on exposure to firewalls, IDS/IPS,
+                    DLP systems, and enterprise security monitoring tools
+                </li>
 
-Observed and assisted with SIEM-based security monitoring,
-including log review and alert analysis
+                <li>
+                    Assisted in phishing email analysis and identification
+                    of suspicious indicators
+                </li>
 
-</li>
+                <li>
+                    Supported threat analysis and security incident
+                    observation alongside senior analysts
+                </li>
 
+                <li>
+                    Collaborated with the SOC team to understand escalation
+                    procedures and incident workflows
+                </li>
 
-<li>
+            </ul>
 
-Gained hands-on exposure to firewalls,
-IDS/IPS,
-DLP systems,
-and enterprise security monitoring tools
 
-</li>
+        </div>
 
+    </div>
 
-<li>
 
-Assisted in phishing email analysis
-and identification of suspicious indicators
 
-</li>
+    <div class="log-entry">
 
 
-<li>
+        <div class="log-id">
 
-Supported threat analysis
-and security incident observation
-alongside senior analysts
+            Aug 2022 - Oct 2022
 
-</li>
+            <div class="tag">
 
+                TRAINING
 
-<li>
+            </div>
 
-Collaborated with the SOC team
-to understand escalation procedures
-and incident workflows
+        </div>
 
-</li>
 
-</ul>
 
+        <div class="log-body">
 
-</div>
 
-</div>
+            <div class="log-role">
 
+                High-Tech Entrepreneurship Development Programme
 
+            </div>
 
-<div class="log-entry">
 
+            <div class="log-org">
 
-<div class="log-id">
+                Maharashtra Centre for Entrepreneurship Development · Maharashtra, India
 
-Aug 2022 - Oct 2022
+            </div>
 
-<div class="tag">
 
-TRAINING
+            <ul>
 
-</div>
+                <li>
+                    Gained hands-on exposure to cybersecurity fundamentals
+                    and digital forensics concepts
+                </li>
 
-</div>
+                <li>
+                    Trained in data recovery techniques, security analysis,
+                    and cyber incident awareness
+                </li>
 
+            </ul>
 
 
-<div class="log-body">
+        </div>
 
-
-<div class="log-role">
-
-High-Tech Entrepreneurship Development Programme
-
-</div>
-
-
-<div class="log-org">
-
-Maharashtra Centre for Entrepreneurship Development · Maharashtra, India
-
-</div>
-
-
-<ul>
-
-<li>
-
-Gained hands-on exposure to cybersecurity fundamentals
-and digital forensics concepts
-
-</li>
-
-
-<li>
-
-Trained in data recovery techniques,
-security analysis,
-and cyber incident awareness
-
-</li>
-
-</ul>
-
-
-</div>
-
-</div>
+    </div>
 
 
 </section>
@@ -1689,172 +1448,140 @@ and cyber incident awareness
 <section id="projects">
 
 
-<div class="section-head">
+    <div class="section-head">
 
-<span class="section-num mono">
+        <span class="section-num mono">
 
-04
+            04
 
-</span>
+        </span>
 
-<h2>
+        <h2>
 
-Projects
+            Projects
 
-</h2>
+        </h2>
 
-</div>
+    </div>
 
 
 
-<div class="project-card">
+    <div class="project-card">
 
 
-<div class="project-top">
+        <div class="project-top">
 
+            <h3>
 
-<h3>
+                TLS Analysis, Exploitation & Firewall Design
 
-TLS Analysis, Exploitation & Firewall Design
+            </h3>
 
-</h3>
 
+            <span class="project-ref mono">
 
-<span class="project-ref mono">
+                CSEC5616 · 2026
 
-CSEC5616 · 2025
+            </span>
 
-</span>
+        </div>
 
 
-</div>
+        <ul>
 
+            <li>
+                Conducted TLS handshake and traffic analysis using Wireshark
+                to identify encryption behaviour and security gaps
+            </li>
 
-<ul>
+            <li>
+                Investigated buffer overflow exploitation techniques
+                and documented mitigation strategies
+            </li>
 
+            <li>
+                Designed firewall rule sets and network segmentation controls,
+                and analysed the Ticketmaster data breach as a vendor-risk
+                case study
+            </li>
 
-<li>
+        </ul>
 
-Conducted TLS handshake and traffic analysis using Wireshark
-to identify encryption behaviour and security gaps
+    </div>
 
-</li>
 
 
-<li>
+    <div class="project-card">
 
-Investigated buffer overflow exploitation techniques
-and documented mitigation strategies
 
-</li>
+        <div class="project-top">
 
+            <h3>
 
-<li>
+                AES Manual Encryption Analysis
 
-Designed firewall rule sets and network segmentation controls;
-analysed the Ticketmaster data breach
-as a vendor-risk case study
+            </h3>
 
-</li>
 
+            <span class="project-ref mono">
 
-</ul>
+                Cryptography · 2026
 
+            </span>
 
-</div>
+        </div>
 
 
+        <ul>
 
-<div class="project-card">
+            <li>
+                Performed manual round-by-round AES encryption calculations
+                to build low-level understanding of block cipher cryptography
+            </li>
 
+        </ul>
 
-<div class="project-top">
 
+    </div>
 
-<h3>
 
-AES Manual Encryption Analysis
 
-</h3>
+    <div class="project-card">
 
 
-<span class="project-ref mono">
+        <div class="project-top">
 
-CSEC5616 · 2025
+            <h3>
 
-</span>
+                Smart Study Tracker
 
+            </h3>
 
-</div>
 
+            <span class="project-ref mono">
 
-<ul>
+                Python · 2026
 
+            </span>
 
-<li>
+        </div>
 
-Performed manual round-by-round AES encryption calculations
-to build low-level understanding
-of block cipher cryptography
 
-</li>
+        <ul>
 
+            <li>
+                Built and debugged a terminal-based Python application
+                from requirements through to a working, presentable final product
+            </li>
 
-</ul>
+            <li>
+                Applied structured problem-solving and iterative testing
+                to resolve logic and indentation errors
+            </li>
 
+        </ul>
 
-</div>
-
-
-
-<div class="project-card">
-
-
-<div class="project-top">
-
-
-<h3>
-
-Smart Study Tracker
-
-</h3>
-
-
-<span class="project-ref mono">
-
-COMP9001 · 2025
-
-</span>
-
-
-</div>
-
-
-<ul>
-
-
-<li>
-
-Built and debugged a terminal-based Python application
-from requirements through to a working,
-presentable final product
-
-</li>
-
-
-<li>
-
-Applied structured problem-solving
-and iterative testing
-to resolve logic and indentation errors
-
-</li>
-
-
-</ul>
-
-
-</div>
+    </div>
 
 
 </section>
@@ -1868,66 +1595,66 @@ to resolve logic and indentation errors
 <section id="education">
 
 
-<div class="section-head">
+    <div class="section-head">
 
 
-<span class="section-num mono">
+        <span class="section-num mono">
 
-05
+            05
 
-</span>
-
-
-<h2>
-
-Education
-
-</h2>
+        </span>
 
 
-</div>
+        <h2>
+
+            Education
+
+        </h2>
 
 
-
-<div class="edu-item">
-
-
-<h3>
-
-University of Sydney - Master of Computer Science
-
-</h3>
-
-
-<p>
-
-Specialisation: Cybersecurity · Sydney, Australia · Jul 2024 - Present
-
-</p>
-
-
-</div>
+    </div>
 
 
 
-<div class="edu-item">
+    <div class="edu-item">
 
 
-<h3>
+        <h3>
 
-RTM Nagpur University - Bachelor of Science, Information Technology
+            University of Sydney - Master of Computer Science
 
-</h3>
-
-
-<p>
-
-Nagpur, India · Completed Jun 2022
-
-</p>
+        </h3>
 
 
-</div>
+        <p>
+
+            Specialisation: Cybersecurity · Sydney, Australia · Jul 2024 - Present
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="edu-item">
+
+
+        <h3>
+
+            RTM Nagpur University - Bachelor of Science, Information Technology
+
+        </h3>
+
+
+        <p>
+
+            Nagpur, India · Completed Jun 2022
+
+        </p>
+
+
+    </div>
 
 
 </section>
@@ -1941,66 +1668,60 @@ Nagpur, India · Completed Jun 2022
 <section id="certifications">
 
 
-<div class="section-head">
+    <div class="section-head">
 
 
-<span class="section-num mono">
+        <span class="section-num mono">
 
-06
+            06
 
-</span>
-
-
-<h2>
-
-Certifications
-
-</h2>
+        </span>
 
 
-</div>
+        <h2>
+
+            Certifications
+
+        </h2>
 
 
-
-<div class="cert-list">
-
-
-<div class="cert-item">
-
-
-<span class="check">
-
-✓
-
-</span>
-
-
-Introduction to Dark Web, Anonymity & Cryptocurrency
-- Tor routing, anonymisation techniques, cybercrime analysis
-
-
-</div>
+    </div>
 
 
 
-<div class="cert-item">
+    <div class="cert-list">
 
 
-<span class="check">
+        <div class="cert-item">
 
-✓
+            <span class="check">
 
-</span>
+                ✓
+
+            </span>
+
+            Introduction to Dark Web, Anonymity & Cryptocurrency
+            - Tor routing, anonymisation techniques, cybercrime analysis
+
+        </div>
 
 
-Certified Dark Web Analyst, Forensic Academy
-- dark web investigations, threat actor profiling, OSINT techniques
+
+        <div class="cert-item">
+
+            <span class="check">
+
+                ✓
+
+            </span>
+
+            Certified Dark Web Analyst, Forensic Academy
+            - dark web investigations, threat actor profiling, OSINT techniques
+
+        </div>
 
 
-</div>
-
-
-</div>
+    </div>
 
 
 </section>
@@ -2008,28 +1729,28 @@ Certified Dark Web Analyst, Forensic Academy
 
 
 <!-- =========================
-     CONTACT / FOOTER
+     CONTACT
 ========================= -->
 
 <footer id="contact">
 
 
-<div class="footer-name">
+    <div class="footer-name">
 
-Ankush Samundre
+        Ankush Samundre
 
-</div>
+    </div>
 
 
-<p>
+    <p>
 
-ankushsamundre01@gmail.com
-&nbsp;·&nbsp;
-+61 0490 335 551
-&nbsp;·&nbsp;
-Newtown, NSW, Australia
+        ankushsamundre01@gmail.com
+        &nbsp;·&nbsp;
+        +61 0490 335 551
+        &nbsp;·&nbsp;
+        Newtown, NSW, Australia
 
-</p>
+    </p>
 
 
 </footer>
@@ -2045,7 +1766,6 @@ Newtown, NSW, Australia
 
 <script>
 
-
 const sections =
 document.querySelectorAll('section');
 
@@ -2053,42 +1773,36 @@ document.querySelectorAll('section');
 const observer =
 new IntersectionObserver(
 
-(entries) => {
+    (entries) => {
 
+        entries.forEach(
 
-entries.forEach(
+            entry => {
 
-entry => {
+                if(entry.isIntersecting){
 
+                    entry.target.classList.add('visible');
 
-if(entry.isIntersecting){
+                }
 
-entry.target.classList.add('visible');
+            }
 
-}
+        );
 
+    },
 
-});
-
-
-},
-
-{
-
-threshold:0.15
-
-}
+    {
+        threshold:0.15
+    }
 
 );
 
 
 sections.forEach(
 
-section =>
-observer.observe(section)
+    section => observer.observe(section)
 
 );
-
 
 </script>
 
